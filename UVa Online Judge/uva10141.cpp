@@ -4,13 +4,14 @@ using namespace std;
 int main() {
 	int n,p;
 	string *r;
-	long double *prices;
+	float *prices;
 	int *req, ctr = 1;
 	while(true) {
-		cin>>n>>p;
-		if(n==0)
+		scanf("%d %d\n",&n,&p);
+		if(n==0 and p==0)
 			break;
-
+		else if(ctr!=1)
+			cout<<endl;
 		int index = -1;
 		int maxReq = numeric_limits<int>::min();
 		for(int i=0;i<n;i++) {
@@ -19,17 +20,18 @@ int main() {
 		}
 		
 		r = new string[p];
-		prices = new long double[p];
+		prices = new float[p];
 		req = new int[p];
 
 		for(int i=0;i<p;i++) {
 			getline(cin,r[i]);
-			cin>>prices[i]>>req[i];
-
+			scanf("%f %d\n",&prices[i],&req[i]);
+			
 			for(int j=0;j<req[i];j++) {
 				string temp;
 				getline(cin,temp);
 			}
+
 			maxReq = max(maxReq,req[i]);
 		}
 
@@ -44,7 +46,7 @@ int main() {
 			}
 		}
 		cout<<"RFP #"<<ctr<<endl;
-		cout<<r[index]<<endl<<endl;
+		cout<<r[index]<<endl;
 		ctr++;
 
 		delete[] r;
