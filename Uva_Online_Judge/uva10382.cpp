@@ -56,7 +56,7 @@ int main() {
 				count = -1;
 				break;
 			}
-			else if(v[i].r < curRight) {		//embedded
+			else if(v[i].r < curRight) {		//this one is 'covered' by the previous sprinkler
 				continue;
 			}
 			else {

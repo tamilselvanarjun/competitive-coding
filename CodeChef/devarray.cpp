@@ -1,3 +1,4 @@
+//AC
 #include <bits/stdc++.h>
 using namespace std;
 #define lg long long int
