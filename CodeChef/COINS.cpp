@@ -1,26 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define lld long int
-map<lld,lld> coinValue;
+#define lld unsigned long int
+#define tInf 1000001
+lld coinValue[tInf];
 
 lld getCoins(lld n) {
-
-	if(coinValue[n])
+	if(n<tInf)
 		return coinValue[n];
-
-	if(int(n/2) + int(n/3) + int(n/4) > n) {
-		coinValue[n] = getCoins(int(n/2)) + getCoins(int(n/3)) + getCoins(int(n/4));
-		return coinValue[n];
-	}
-	else {
-		coinValue[n] = n;
-		return n;
-	}
+	else 
+		return max(n,getCoins(n/2)+getCoins(n/3)+getCoins(n/4));
 }
 
 int main() {
 
-	coinValue[0] = 0;
+	for(lld i=0;i<12;i++)
+		coinValue[i] = i;
+	for(lld i=12;i<tInf;i++) 
+		coinValue[i] = max(i, coinValue[i/2]+coinValue[i/3]+coinValue[i/4]);
 
 	lld number;
 	while(cin>>number) {
@@ -28,6 +24,4 @@ int main() {
 	}
 
 }
-
-
-//Seg fault
+//ac
