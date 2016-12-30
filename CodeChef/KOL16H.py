@@ -1,3 +1,4 @@
+# AC
 t = input()
 M = pow(2, 33)
 for i in xrange(t):

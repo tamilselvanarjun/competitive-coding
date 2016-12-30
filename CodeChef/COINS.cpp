@@ -1,3 +1,4 @@
+// AC
 #include <bits/stdc++.h>
 using namespace std;
 #define lld unsigned long int
@@ -24,4 +25,3 @@ int main() {
 	}
 
 }
-//ac
