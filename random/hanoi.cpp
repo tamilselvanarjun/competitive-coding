@@ -3,15 +3,18 @@
 using namespace std;
 
 void printHanoi(int n, int src, int dest, int via) {
-	if(n==2){
-		printf("move 1 from %d to %d\n",src,via);
-		printf("move 2 from %d to %d\n",src,dest);
-		printf("move 1 from %d to %d\n",via,dest);
+	if(n==1) {
+		printf("move disk 1 from %d to %d\n", src, dest);
+	}
+	else if(n==2){
+		printf("move disk 1 from %d to %d\n", src, via);
+		printf("move disk 2 from %d to %d\n", src, dest);
+		printf("move disk 1 from %d to %d\n", via, dest);
 	}
 	else {
-		printHanoi(n-1,src,via,dest);
-		printf("move %d from %d to %d\n",n,src,dest);
-		printHanoi(n-1,via,dest,src);
+		printHanoi(n-1, src, via, dest);
+		printf("move disk %d from %d to %d\n", n, src, dest);
+		printHanoi(n-1, via, dest, src);
 	}
 }
 
